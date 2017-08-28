@@ -112,25 +112,30 @@ body{
 	margin-right: 100px;
 }
 
-.bottom-text{
-	margin-right: 46px;
-	margin-top: 80px;
-	float: left;
-	list-style-type: none;
-}
 
-.bottom-text-link{
+.bottom-text-link1,.bottom-text-link2,.bottom-text-link3{
+	margin-top: 80px; 
 	color: #FFF;
 	font-size: 18px;
 	text-decoration: none;
 }
-.bottom-text-link:hover{
+.text-hover:hover{
 	color: #EEE;
 }
-#text-QQ{
-	margin-left: 43.3%;
+.bottom-text-link1{
+	margin-right:46px;
+}
+.bottom-text-link3{
+	margin-left:46px;
 }
 
+
+.bottom-text{
+	width: 250px;
+	margin: 0 auto;
+	padding: 80px;
+
+}
 #dev-logo1{
 	height: 100px;
 	width: 50%;
@@ -141,4 +146,3 @@ body{
 	width: 50%;
 	float: right;
 }
-
