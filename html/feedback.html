@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Feedback</title>
+	<style>
+	*{
+		margin: 0;
+	}
+	.title{
+		font-size: 30px;
+		text-align: center;
+		margin: 30px;
+	}
+	.center-box1{
+		border:3px dotted #e8a02d;
+		border-radius: 25px;
+		width: 1200px;
+		height: 600px;
+		margin: 0 auto;
+		margin-top: 60px;
+		padding: 20px;
+
+	}
+	#text{
+		font-family: "微软雅黑",sans-serif;
+		font-size: 20px;
+		border: none;
+		outline: none;
+	}
+	#button{
+		width: 100px;
+		height: 50px;
+		color: #FFF;
+		font-size: 16px;
+		background-color: #22ba6a;
+		outline: none;
+		border: none;
+		margin-top: 40px;
+		border-radius: 12px;
+	}
+	.center-box2{
+		width: 100px;
+		height: 50px;
+		margin:  auto;
+	}
+	</style>
+	<script>
+	function ajaxObject() {
+    var xmlHttp;
+    try {
+        // Firefox, Opera 8.0+, Safari
+        xmlHttp = new XMLHttpRequest();
+        } 
+    catch (e) {
+        // Internet Explorer
+        try {
+                xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+            try {
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e) {
+                alert("您的浏览器不支持此操作！");
+                return false;
+            }
+        }
+    }
+    return xmlHttp;
+}
+	function onclick1(){
+
+
+var ajax = ajaxObject();
+    ajax.open( "POST" , "http://127.0.0.1:9999" , true );
+    ajax.setRequestHeader( "Content-Type" , "application/x-www-form-urlencoded" );
+    ajax.onreadystatechange = function () {
+        if( ajax.readyState == 4 ) {
+            if( ajax.status == 200 ) {
+                document.getElementById("button").innerHTML="已提交";
+	document.getElementById("button").style.color="#000";
+	document.getElementById("button").style.backgroundColor="#FFC";
+	
+            }
+            else {
+                alert("提交失败，请重试。错误码："+ajax.status);
+
+            }
+        }
+        else {
+    //"        fnLoading();
+    document.getElementById("button").innerHTML="正在提交";
+	document.getElementById("button").style.color="#000";
+	document.getElementById("button").style.backgroundColor="#FFC";
+        }
+    }
+    ajax.send("Feedback="+document.getElementById("text").value );
+
+	
+	}
+
+		</script>
+</head>
+
+
+
+<body>
+
+	<p class="title">意见反馈</p>
+	<div class="center-box1" >
+		<textarea name="" id="text" cols="110" rows="22"></textarea>
+	</div>
+	<div class="center-box2">
+	<button onclick="onclick1()" id = "button">提交</button>
+	</div>
+</body>
+</html>
