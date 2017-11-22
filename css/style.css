@@ -146,18 +146,18 @@ body{
 	width: 50%;
 	float: right;
 }
-/*#ad{
-	width: 590px;
-	margin: 0 auto;
-	margin-top: 25px; 
-}
-#ad-001{
 
+.logo img{
+	max-height: none!important;
+                width: 300px;
+                height: 300px;
+                overflow: hidden;
+                -webkit-transition: -webkit-transform 600ms;
+                -moz-transition: -moz-transform 600ms;
+                transition: transform 600ms;
 }
-#ad-002{
-	margin-left: 50px;
-	margin-right :50px;
+.logo img:hover {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                transform: rotate(360deg);
 }
-#ad-003{
-
-}*/
